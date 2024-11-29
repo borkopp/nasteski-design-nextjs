@@ -37,33 +37,34 @@ export default function ServicesSection() {
   ]
 
   return (
-    <section id="services" className="w-full bg-white py-16 md:py-24 ">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Услуги</h2>
-          <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed">
-            Погледнете ги нашите услуги и изберете онаа која ја одговара на вашите потреби!
-          </p>
-        </div>
-      <div className="container mx-auto px-32">
+    <section id="services" className="w-full bg-white py-12 md:py-24">
+      <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8 md:mb-12 px-4">
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Услуги</h2>
+        <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed px-4">
+          Погледнете ги нашите услуги и изберете онаа која одговара на вашите потреби!
+        </p>
+      </div>
+      
+      <div className="container mx-auto px-4 md:px-8 lg:px-16 xl:px-32">
         {services.map((service, index) => (
           <div 
             key={index} 
             className={cn(
-              "flex flex-col lg:flex-row items-center gap-8 lg:gap-12",
-              index !== services.length - 1 && "mb-20", // Add margin bottom except for last item
-              // Middle item has reversed order
-              index === 1 && "lg:flex-row-reverse"
+              "flex flex-col lg:flex-row items-center gap-6 md:gap-8 lg:gap-12",
+              index !== services.length - 1 && "mb-16 md:mb-20", // Add margin bottom except for last item
+              index === 1 && "lg:flex-row-reverse" // Middle item has reversed order on desktop
             )}
           >
             {/* Content */}
-            <div className="flex-1 space-y-6">
-              {/* <h2 className="text-3xl md:text-4xl font-bold"><Fence className="w-10 h-10 text-primary" /></h2> */}
-              <h2 className="text-3xl md:text-4xl font-bold">{service.title}</h2>
-              <div className="space-y-4">
+            <div className="flex-1 space-y-4 md:space-y-6">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center lg:text-left">
+                {service.title}
+              </h2>
+              <div className="space-y-3 md:space-y-4">
                 {service.description.map((paragraph, pIndex) => (
                   <p 
                     key={pIndex} 
-                    className="text-gray-600 text-base md:text-lg leading-relaxed"
+                    className="text-gray-600 text-sm md:text-base lg:text-lg leading-relaxed  lg:text-left"
                   >
                     {paragraph}
                   </p>
@@ -72,15 +73,17 @@ export default function ServicesSection() {
             </div>
 
             {/* Image */}
-            <div className="flex-1 flex justify-center">
-              <Image
-                src={service.image}
-                alt={service.title}
-                width={500}
-                height={400}
-                className="object-cover rounded-lg"
-                priority={index === 0}
-              />
+            <div className="flex-1 w-full lg:w-auto mt-6 lg:mt-0">
+              <div className="relative w-full aspect-[4/3] md:aspect-[16/12]">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover rounded-lg"
+                  priority={index === 0}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
             </div>
           </div>
         ))}
