@@ -37,15 +37,10 @@ export default function ServicesSection() {
   ]
 
   return (
-    <section id="services" className="w-full bg-white py-16 md:py-24">
-              <div className="space-y-4 items-center text-center mb-14">
-          {/* <h3 data-aos="fade-up" className="text-sm font-bold uppercase tracking-wide text-primary">
-            Услуги
-          </h3> */}
-          <h2 data-aos="fade-up" data-aos-delay="100" className="text-4xl font-semibold tracking-tighter sm:text-4xl">
-            Услуги
-          </h2>
-          <p data-aos="fade-up" data-aos-delay="200" className="text-neutral-500 text-[1rem] mx-auto my-4 text-center relative">
+    <section id="services" className="w-full bg-white py-16 md:py-24 ">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Услуги</h2>
+          <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed">
             Погледнете ги нашите услуги и изберете онаа која ја одговара на вашите потреби!
           </p>
         </div>

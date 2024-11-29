@@ -7,9 +7,9 @@ import { useScroll } from "@/hooks/useScroll";
 
 const navItems = [
   { label: "Почетна", href: "/" },
-  { label: "Услуги", href: "/services" },
-  { label: "Галерија", href: "/gallery" },
-  { label: "Контакт", href: "/contact" },
+  { label: "Услуги", href: "#services" },
+  { label: "Галерија", href: "#gallery" },
+  { label: "Контакт", href: "#contact" },
 ];
 
 export default function Navbar() {
