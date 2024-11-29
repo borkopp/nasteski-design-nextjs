@@ -5,9 +5,14 @@ import { Textarea } from "@/components/ui/textarea"
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-16 px-4 md:px-8 bg-[#EFEFEF]">
+    <section id="contact" className="py-16 px-4 md:px-8 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-8">Контакт</h2>
+        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-16">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Контакт</h2>
+          <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed">
+            Контактирајте нас за да добиете дополнителни информации!
+          </p>
+        </div>
         <div className="grid md:grid-cols-2 gap-8">
           <div className="space-y-6">
             <h3 className="text-xl font-semibold mb-4">Достапни сме на:</h3>

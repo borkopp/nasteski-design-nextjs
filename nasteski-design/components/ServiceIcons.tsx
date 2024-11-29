@@ -2,7 +2,7 @@ import { Palette, Shield, Ruler } from "lucide-react";
 
 export default function ServiceIcons() {
   return (
-    <div className="bg-[#EFEFEF]">
+    <div className="bg-gradient-to-b from-gray-50 to-white">
     <div className="container mx-auto px-24  py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex flex-col items-center text-center p-6 max-w-sm mx-auto">
