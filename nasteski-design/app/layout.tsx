@@ -3,16 +3,12 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
+const Inter = localFont({
+  src: "./fonts/InterVF.ttf",
+  variable: "--font-inter",
   weight: "100 900",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+
 
 export const metadata: Metadata = {
   title: "Настески Дизајн - Алуминиумски огради и тенди",
@@ -26,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="mk">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${Inter.className} antialiased`}>
         <Navbar />
         {children}
       </body>

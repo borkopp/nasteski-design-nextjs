@@ -1,10 +1,13 @@
 import Hero from '@/components/Hero'
+import ServiceIcons from '@/components/ServiceIcons'
+import ServicesSection from '@/components/services-section'
 
 export default function Home() {
   return (
     <main>
       <Hero />
-      {/* Other components */}
+      <ServicesSection />
+      <ServiceIcons />
     </main>
   )
 }

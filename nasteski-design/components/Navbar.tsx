@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
+import { useScroll } from "@/hooks/useScroll";
 
 const navItems = [
   { label: "Почетна", href: "/" },
@@ -13,17 +13,7 @@ const navItems = [
 ];
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 20;
-      setScrolled(isScrolled);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const scrolled = useScroll(20);
 
   return (
     <header
@@ -36,7 +26,6 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between">
-          {/* Logo */}
           <Link 
             href="/" 
             className={cn(
@@ -47,14 +36,13 @@ export default function Navbar() {
             <Image src="/logo-black.png" alt="Nasteski Design" width={100} height={100} />
           </Link>
 
-          {/* Navigation Items */}
           <ul className="flex items-center gap-8">
             {navItems.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
                   className={cn(
-                    "font-semibold transition-colors hover:text-black/70",
+                    "font-semibold transition-colors hover:text-black/70 uppercase",
                     scrolled ? "text-black" : "text-black"
                   )}
                 >

@@ -5,7 +5,7 @@ import { ArrowDown } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative h-[90vh] w-full">
+    <section className="relative h-[100vh] w-full">
       {/* Background Image */}
       <Image
         src="/hero/hero-bg.png"
@@ -17,7 +17,7 @@ export default function Hero() {
       />
 
       {/* Content Container */}
-      <div className="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative h-full container mx-auto px-4">
         <div className="flex flex-col justify-center h-full max-w-xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
             Алуминиумски огради и тенди
@@ -28,8 +28,8 @@ export default function Hero() {
             различни профили на приватни и деловни објекти.
           </p>
 
-            <Link href="#about">
-            <Button size="lg" className="w-fit">
+            <Link href="#services">
+            <Button size="lg" className="w-fit" variant={"gooeyLeft"}>
               Дознај повеќе
               <ArrowDown className="w-4 h-4 ml-2" />
             </Button>
